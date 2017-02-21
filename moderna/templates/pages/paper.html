@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load mezzanine_tags keyword_tags %}
+
+{% block meta_title %}{{ paper.title }}{% endblock %}
+
+
+
+{% block meta_description %}{% metablock %}
+{{ paper.origin_url }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}
+{% editable paper.title %}{{ paper.title }}{% endeditable %}
+{% endblock %}
+
+{% load mezzanine_tags %}
+{% block left_wrapper %}
+{% endblock %}
+
+<div class="col-md-{% block main_col_size %}8{% endblock %}">
+{% block main %}
+
+{% editable paper.content %}
+{{ paper.content|richtext_filters|safe }}
+{% endeditable %}
+
+{% endblock %}
+</div>
+
+{% block right_panel %}
+{{block.super}}
+{% endblock %}

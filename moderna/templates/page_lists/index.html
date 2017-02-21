@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n  mezzanine_tags staticfiles%}
+{% block meta_title %}{{ category.name }}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block title_wrapper %}
+<section class="callaction">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="big-cta">
+					<div class="cta-text">
+                        <h2>{{ category.name }}</h2>
+                        <p>{{ category.introduction }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+
+{% block left_wrapper %}{% endblock %}
+{% block right_wrapper %}{% endblock %}
+
+{% block main_wrapper %}
+    {% for page in pages %}
+    <div>
+        <a href="#">{{ page.title }}</a>
+        <p>bbbbbbbbbb</p>
+    </div>
+    {% endfor %}
+
+{% endblock %}
+
+
