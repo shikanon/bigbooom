@@ -7,11 +7,17 @@ django.setup()
 
 from moderna.models import Category, Paper
 
-category_all_kwargs = [{'name':u'游戏', 'introduction':'单机游戏、游戏攻略'},
-              {'name': u'新闻', 'introduction': '各类新闻、快报'},
-              {'name': u'二次元', 'introduction': '二次元资讯、点评'},
-              {'name': u'技术', 'introduction': '技术博客、前沿资讯'},
-              {'name': u'同性', 'introduction': '未知领域'}]
+category_all_kwargs = [
+    {'name':u'游戏玩家', 'introduction': '单机游戏、游戏攻略'},
+    {'name': u'新闻资讯', 'introduction': '各类新闻、新闻快报'},# 央视新闻
+    {'name': u'二次元', 'introduction': '二次元资讯、点评'},
+    {'name': u'技术前沿', 'introduction': '技术博客、前沿资讯'},# 开发者头条、InfoQ
+    {'name': u'娱乐八卦', 'introduction': '搞笑段子、娱乐新闻、八卦新闻'},# UC神评论
+    {'name': u'女性生活', 'introduction': '美丽、时尚、女性、生活'},# 蒙咪
+    {'name': u'金融投资', 'introduction': '投资热点、今日头条'},# 36kr
+    {'name': u'同性社区', 'introduction': '未知的领域等你打开'}
+    {'name': u'人工智能', 'introduction': '技术博客、前沿资讯'},# 机器之心、新智元
+]
 
 for kwargs in category_all_kwargs:
     try:
