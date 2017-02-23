@@ -29,9 +29,14 @@
 
 {% block main_wrapper %}
     {% for page in pages %}
-    <div>
-        <a href="#">{{ page.title }}</a>
-        <p>bbbbbbbbbb</p>
+    <div style="margin-bottom: 20px">
+        <a href="/moderna/page/{{ page.id }}">{{ page.title }}</a>
+        {% if page.pure_content %}
+            <p>{{ page.pure_content | slice:"30" }}...</p>
+        {% else %}
+            <p>未知领域</p>
+        {% endif %}
+        <div><span></span><span>{{ page.pub_date }}</span></div>
     </div>
     {% endfor %}
 

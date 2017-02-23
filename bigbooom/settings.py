@@ -135,6 +135,8 @@ AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
 # a mode you'd pass directly to os.chmod.
 FILE_UPLOAD_PERMISSIONS = 0o644
 
+# 页面主题
+SITE_TITLE = u'泛资讯'
 
 #############
 # DATABASES #

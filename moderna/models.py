@@ -1,6 +1,6 @@
 #coding:utf8
 from django.db import models
-from citizen.models import Citizen
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -19,14 +19,15 @@ class Tag(models.Model):
 
 class Source(models.Model):
     name = models.CharField(max_length=200, unique=True)
-    star = models.IntegerField()
+    star = models.IntegerField(default=0)
+    url = models.URLField(null=True, blank=True)
     tag = models.ManyToManyField(Tag)
 
 
 class Paper(models.Model):
     title = models.CharField(max_length=200)
     pub_date = models.DateField(u'创建时间', auto_now=True)
-    author = models.ForeignKey(Citizen, on_delete=models.SET_NULL, null=True)#外键被删除时，paper不影响
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)#外键被删除时，paper不影响
     content = models.TextField(null=True, blank=True)# 网页源码
     pure_content = models.TextField(null=True, blank=True)# 纯文字
     doc_vector = models.CharField(max_length=100, null=True, blank=True)# 文章向量
