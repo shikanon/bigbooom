@@ -52,4 +52,8 @@ Temporary Items
 # python cache
 *.pyc
 
+# all named migrations files
 migrations
+
+# account config file
+account.py
